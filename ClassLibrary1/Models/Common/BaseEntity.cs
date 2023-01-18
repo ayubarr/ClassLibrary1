@@ -1,6 +1,4 @@
-﻿
-
-namespace  ClassLibrary1.Data.Models.Common
+﻿namespace  ClassLibrary1.Data.Models.Common
 
 {
     public abstract class BaseEntity

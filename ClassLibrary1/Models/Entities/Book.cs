@@ -1,8 +1,6 @@
 ﻿using ClassLibrary1.Data.Models.Common;
 using ClassLibrary1.Data.Models.Enums;
 
-
-
 namespace ClassLibrary1.Data.Models.Entities
 {
     public class Book : BaseEntity
