@@ -28,17 +28,18 @@ namespace LibraryProject.CMD
             return DateTime.ParseExact(value, ConsoleConstants.DatePattern, null);
         }
 
-        public static Languege GetLanguegeFromConsole(string fieldName)
+        public static Languege GetEnumNumber(string fieldName)
         {
+            const int indexDif = 1;
             string[] enumValues = Enum.GetNames(typeof(Languege));
             int i = 0;
             foreach (string enumValue in enumValues) 
             {
-                Console.WriteLine($"{i} {enumValue}");
+                Console.WriteLine($"{i + indexDif} {enumValue}");
                 i++;
             }
 
-            int number = GetIntFromConsole(fieldName);
+            int number = GetIntFromConsole(fieldName) - indexDif;
 
             return (Languege)number;
         }

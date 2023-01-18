@@ -65,7 +65,7 @@ namespace LibraryProject.CMD
             }
             if(typeof(Languege) == typeof(T))
             {
-                Languege languegeValue = ConsoleHelper.GetLanguegeFromConsole(fieldName);
+                Languege languegeValue = ConsoleHelper.GetEnumNumber(fieldName);
                 object objectValue = (object)languegeValue;
                 T value = (T)objectValue;
 
