@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary1.Data.Models.Common
+﻿namespace LibraryProject.Data.Models.Common
 {
     public abstract class Person : BaseEntity
     {

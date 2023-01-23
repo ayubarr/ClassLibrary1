@@ -1,6 +1,6 @@
-﻿using ClassLibrary1.Data.Models.Common;
+﻿using LibraryProject.Data.Models.Common;
 
-namespace ClassLibrary1.Data.Models.Entities
+namespace LibraryProject.Data.Models.Entities
 {
     public class Users : Person
     {

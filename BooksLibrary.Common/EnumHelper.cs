@@ -1,6 +1,6 @@
 ﻿namespace BooksLibrary.Common
 {
-    public class Class1
+    public static class EnumHelper
     {
 
     }

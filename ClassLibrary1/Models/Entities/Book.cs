@@ -1,7 +1,7 @@
-﻿using ClassLibrary1.Data.Models.Common;
-using ClassLibrary1.Data.Models.Enums;
+﻿using LibraryProject.Data.Models.Common;
+using LibraryProject.Data.Models.Enums;
 
-namespace ClassLibrary1.Data.Models.Entities
+namespace LibraryProject.Data.Models.Entities
 {
     public class Book : BaseEntity
     {
@@ -10,8 +10,9 @@ namespace ClassLibrary1.Data.Models.Entities
         public int CountAvailable { get; set; }
         public bool IsAvailable => CountAvailable > 0;
         public DateTime Released { get; set; }
+
         public List<Author> Authors { get; set; }
-        public List<Genre> genres { get; set; }
-        public List<Languege> langues { get; set; }
+        public Genre Genres { get; set; }
+        public Languege Langueges { get; set; }
     }
 }

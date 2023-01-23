@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary1.Data.Models.Enums
+﻿namespace LibraryProject.Data.Models.Enums
 {
     public enum Languege
     {

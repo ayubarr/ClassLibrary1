@@ -1,4 +1,4 @@
-﻿using ClassLibrary1.Data.Models.Enums;
+﻿using LibraryProject.Data.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,57 +23,76 @@ namespace LibraryProject.CMD
                 }
                 catch
                 {
-                    Console.WriteLine("An error while getting  value recived. Pleacse enter data again");
+                    Console.WriteLine("An error while getting" +
+                        " value recived. Pleacse enter data again");
                 }
             }
             return default(T);
-     
-
-
         }
+
         public static T ReadData(string fieldName)
         {
             if (typeof(string) == typeof(T))
             {
-                string stringValue = ConsoleHelper.GetStringFromConsole(fieldName);
-                object objectValue = (object)stringValue;
-                T value = (T)objectValue;
+                return (T)(object)ConsoleHelper.GetStringFromConsole(fieldName);
 
-                return value;
-
-                //return (T)(object)ConsoleHelper.GetStringFromConsole(fieldName);
+                //string stringValue = ConsoleHelper.GetStringFromConsole(fieldName);
+                //object objectValue = (object)stringValue;
+                //T value = (T)objectValue;
+                //return value;
             }
             if (typeof(int) == typeof(T))
             {
-                int intValue = ConsoleHelper.GetIntFromConsole(fieldName);
-                object objectValue = (object)intValue;
-                T value = (T)objectValue;
+                return (T)(object)ConsoleHelper.GetIntFromConsole(fieldName);
 
-                return value;
-
-                //return (T)(object)ConsoleHelper.GetIntFromConsole(fieldName);
+                //int intValue = ConsoleHelper.GetIntFromConsole(fieldName);
+                //object objectValue = (object)intValue;
+                //T value = (T)objectValue;
+                //return value;
             }
-            if(typeof(DateTime) == typeof(T))
+            if (typeof(DateTime) == typeof(T))
             {
-                DateTime dateTimeValue = ConsoleHelper.GetDataTimeFromConsole(fieldName);
-                object objectValue = (object)dateTimeValue;
-                T value = (T)objectValue;
+                return (T)(object)ConsoleHelper.GetDataTimeFromConsole(fieldName);
 
-                return value;
-
-               // return (T)(object)ConsoleHelper.GetDataTimeFromConsole(fieldName);
+                //DateTime dateTimeValue = ConsoleHelper.GetDataTimeFromConsole(fieldName);
+                //object objectValue = (object)dateTimeValue;
+                //T value = (T)objectValue;
+                //return value;
             }
-            if(typeof(Languege) == typeof(T))
+            if (typeof(Languege) == typeof(T))
             {
-                Languege languegeValue = ConsoleHelper.GetEnumNumber(fieldName);
-                object objectValue = (object)languegeValue;
-                T value = (T)objectValue;
+                return (T)(object)GetLanguageFromConsole(fieldName);
 
-                return value;
-
-              // return (T)(object)ConsoleHelper.GetLanguegeFromConsole(fieldName);
+                //Languege languegeValue = GetLanguageFromConsole(fieldName);
+                //object objectValue = (object)languegeValue;
+                //T value = (T)objectValue;
+                //return value;
+            }
+            if (typeof(Genre) == typeof(T))
+            {
+                return (T)(object)GetGenreFromConsole(fieldName);
+                
+                //Genre genreValue = GetGenreFromConsole(fieldName);
+                //object objectValue = (object)genreValue;
+                //T value = (T)objectValue;
+                //return value;
             }
             return default(T);
+        }
+
+        private static Languege GetLanguageFromConsole(string fieldName)
+        {
+            Languege languegeValue = (Languege)ConsoleHelper
+           .GetEnumNumberFromConsole(fieldName, typeof(Languege));
+
+            return languegeValue;
+        }
+        private static Genre GetGenreFromConsole(string fieldName)
+        {
+            Genre genreValue = (Genre)ConsoleHelper
+           .GetEnumNumberFromConsole(fieldName, typeof(Genre));
+
+            return genreValue;
         }
     }
 }

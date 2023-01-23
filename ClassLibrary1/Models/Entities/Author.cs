@@ -1,5 +1,6 @@
-﻿using ClassLibrary1.Data.Models.Common;
-namespace ClassLibrary1.Data.Models.Entities
+﻿using LibraryProject.Data.Models.Common;
+
+namespace LibraryProject.Data.Models.Entities
 {
     public class Author : Person
     {

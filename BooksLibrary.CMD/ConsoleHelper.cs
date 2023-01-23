@@ -27,21 +27,23 @@ namespace LibraryProject.CMD
             string value = GetStringFromConsole(fieldName) ;
             return DateTime.ParseExact(value, ConsoleConstants.DatePattern, null);
         }
-
-        public static Languege GetEnumNumber(string fieldName)
+        private static void PrintEnumWithIndexes(Type enumType, int indexDif)
         {
-            const int indexDif = 1;
-            string[] enumValues = Enum.GetNames(typeof(Languege));
+            string[] enumValues = Enum.GetNames(enumType);
             int i = 0;
-            foreach (string enumValue in enumValues) 
+            foreach (string enumValue in enumValues)
             {
                 Console.WriteLine($"{i + indexDif} {enumValue}");
                 i++;
             }
+        }
+        public static int GetEnumNumberFromConsole(string fieldName, Type enumType)
+        {
+            const int indexDif = 1;
+            PrintEnumWithIndexes(enumType, indexDif);
 
             int number = GetIntFromConsole(fieldName) - indexDif;
-
-            return (Languege)number;
+            return number;
         }
     }
 
