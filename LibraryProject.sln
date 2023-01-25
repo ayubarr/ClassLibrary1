@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProject.BL", "Librar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProject.CMD", "BooksLibrary.CMD\LibraryProject.CMD.csproj", "{4804A294-778F-4F35-A2E4-0738B9EFE8CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksLibrary.Common", "BooksLibrary.Common\BooksLibrary.Common.csproj", "{0D4D6D82-CD75-4575-ABE5-24DEE473B442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProject.Common", "BooksLibrary.Common\LibraryProject.Common.csproj", "{0D4D6D82-CD75-4575-ABE5-24DEE473B442}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

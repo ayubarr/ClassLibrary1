@@ -59,7 +59,7 @@ namespace LibraryProject.CMD
                 //T value = (T)objectValue;
                 //return value;
             }
-            if (typeof(Languege) == typeof(T))
+            if (typeof(Language) == typeof(T))
             {
                 return (T)(object)GetLanguageFromConsole(fieldName);
 
@@ -80,17 +80,17 @@ namespace LibraryProject.CMD
             return default(T);
         }
 
-        private static Languege GetLanguageFromConsole(string fieldName)
+        private static Language GetLanguageFromConsole(string fieldName)
         {
-            Languege languegeValue = (Languege)ConsoleHelper
-           .GetEnumNumberFromConsole(fieldName, typeof(Languege));
+            Language languegeValue = (Language)ConsoleHelper
+                .GetEnumNumberFromConsole(fieldName, typeof(Language));
 
             return languegeValue;
         }
         private static Genre GetGenreFromConsole(string fieldName)
         {
             Genre genreValue = (Genre)ConsoleHelper
-           .GetEnumNumberFromConsole(fieldName, typeof(Genre));
+                .GetEnumNumberFromConsole(fieldName, typeof(Genre));
 
             return genreValue;
         }

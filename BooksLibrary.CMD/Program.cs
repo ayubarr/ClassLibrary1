@@ -1,9 +1,18 @@
-﻿using LibraryProject.CMD;
+﻿using LibraryProject.BL.Controllers.Implementations;
+using LibraryProject.BL.Controllers.Interfaces;
+using LibraryProject.CMD;
 using LibraryProject.Data.Models.Entities;
 using LibraryProject.Data.Models.Enums;
 
+IBookController bookController = new TempBookController();
+
 Console.WriteLine("Hello, World!");
-Console.WriteLine("Let\'s create a book!");
+
+Book book = GetBookFromConsole();
+
+bookController.AddBook(book);
+
+List<Book> bookList = bookController.GetAll();
 
 Console.ReadKey();
 
@@ -14,7 +23,7 @@ static Book GetBookFromConsole()
     string shortDesc = ConsoleReader<string>.Read("short description");
     DateTime releasedDate = ConsoleReader<DateTime>
         .Read($"Release date in format {ConsoleConstants.DatePattern}");
-    Languege lang = ConsoleReader<Languege>.Read("languege number");
+    Language lang = ConsoleReader<Language>.Read("languege number");
     Genre genre = ConsoleReader<Genre>.Read("Genre number");
     int countofAvaible = ConsoleReader<int>.Read("books count");
     #endregion
@@ -25,7 +34,7 @@ static Book GetBookFromConsole()
         Name = bookName,
         ShortDesc = shortDesc,
         Released = releasedDate,
-        Langueges = lang,
+        Languages = lang,
         Genres = genre,
         CountAvailable = countofAvaible,
     };

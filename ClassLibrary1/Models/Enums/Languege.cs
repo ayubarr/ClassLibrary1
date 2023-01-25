@@ -1,6 +1,6 @@
 ﻿namespace LibraryProject.Data.Models.Enums
 {
-    public enum Languege
+    public enum Language
     {
         Ucrainian,
         Russian,

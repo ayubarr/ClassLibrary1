@@ -13,6 +13,6 @@ namespace LibraryProject.Data.Models.Entities
 
         public List<Author> Authors { get; set; }
         public Genre Genres { get; set; }
-        public Languege Langueges { get; set; }
+        public Language Languages { get; set; }
     }
 }
