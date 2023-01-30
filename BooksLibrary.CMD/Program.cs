@@ -1,10 +1,11 @@
 ﻿using LibraryProject.BL.Controllers.Implementations;
+using LibraryProject.BL.Controllers.Implementations.Temp;
 using LibraryProject.BL.Controllers.Interfaces;
 using LibraryProject.CMD;
 using LibraryProject.Data.Models.Entities;
 using LibraryProject.Data.Models.Enums;
 
-IBookController bookController = new TempBookController();
+IBookController bookController = new IBookController();
 
 Console.WriteLine("Hello, World!");
 
@@ -19,6 +20,19 @@ Console.ReadKey();
 static Book GetBookFromConsole()
 {
     #region Get book data
+
+    IDBilable<Book> bookController = new TempDBilController<Book>();
+    IDBilable<Author> authorController = new TempDBilController<Author>();
+
+    List<Book> bookList = bookController.GetAll();
+
+    Book book = GetBookFromConsole();
+    bookController.Add(book);
+
+    bookList = bookController.GetAll();
+
+    Console.ReadLine();
+
     string bookName = ConsoleReader<string>.Read("book name");
     string shortDesc = ConsoleReader<string>.Read("short description");
     DateTime releasedDate = ConsoleReader<DateTime>
@@ -29,7 +43,7 @@ static Book GetBookFromConsole()
     #endregion
 
     #region Create new book
-    Book book = new Book()
+    Book books = new Book()
     {
         Name = bookName,
         ShortDesc = shortDesc,
